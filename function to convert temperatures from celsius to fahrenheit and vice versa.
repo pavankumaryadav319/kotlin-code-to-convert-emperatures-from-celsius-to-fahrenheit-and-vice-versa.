@@ -1,0 +1,47 @@
+There are two methods to solve this question 
+
+....>>>>i felt this as a hard 
+/*fun convertTemperature(value: Double, unit: String): Double {
+    return if (unit.equals("C", ignoreCase = true)) {
+        // Convert Celsius to Fahrenheit
+        (value * 9/5) + 32
+    } else if (unit.equals("F", ignoreCase = true)) {
+        // Convert Fahrenheit to Celsius
+        (value - 32) * 5/9
+    } else {
+        throw IllegalArgumentException("Invalid unit. Please use 'C' for Celsius or 'F' for Fahrenheit.")
+    }
+}
+
+fun main() {
+    val celsius = 25.0
+    val fahrenheit = convertTemperature(celsius, "C")
+    println("$celsius°C is equal to $fahrenheit°F")
+
+    val fahrenheitValue = 77.0
+    val celsiusValue = convertTemperature(fahrenheitValue, "F")
+    println("$fahrenheitValue°F is equal to $celsiusValue°C")
+}*/
+
+....>>>where it is a little bit easier
+
+fun convertTemperature(value: Double, toCelsius: Boolean): Double {
+    return if (toCelsius) {
+        // Convert Fahrenheit to Celsius
+        (value - 32) * 5 / 9
+    } else {
+        // Convert Celsius to Fahrenheit
+        (value * 9 / 5) + 32
+    }
+}
+
+fun main() {
+    val celsius = 25.0
+    val fahrenheit = convertTemperature(celsius, false)
+    println("$celsius°C is equal to $fahrenheit°F")
+
+    val fahrenheitValue = 77.0
+    val celsiusValue = convertTemperature(fahrenheitValue, true)
+    println("$fahrenheitValue°F is equal to $celsiusValue°C")
+}
+
